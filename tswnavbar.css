@@ -9,9 +9,10 @@
 	width: 130px ;
 	max-width: 100% ;
 	text-align: center ;
+	margin: 0 auto ;
 }
 #tswcssbuttons ul {
-	margin: 10 ;
+	margin: 10px 0 ;
 	padding: 0 ;
 	list-style: none ;
 }
@@ -24,10 +25,13 @@
 }
 #tswcssbuttons li a {
 	color: #000000 ;
-	background-color: #9eee5d ;
-	border: 0px outset #9eee5d ;
+	border-radius: 5px ;
+	border: 2px solid #9eee5d ;
+	width: 70px ;
+	height: 20px ;
 	text-decoration: none ;
-	display: block ;
+	display: inline-block ;
+	padding: 10px ;
 }
 #tswcssbuttons li a:hover {
 	color: #ffffff ;

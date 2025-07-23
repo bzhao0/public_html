@@ -1,0 +1,52 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        color: rgb(255, 255, 255);
+    }
+}
+
+#cell-holder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    aspect-ratio: 1 / 1;
+    width: 45%;
+    gap: 8px;
+
+    div {
+        color: rgb(255, 255, 255);
+    }
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    background: rgb(20, 20, 20);
+    border: solid;
+    border-color: rgb(150, 150, 150);
+    overflow-wrap: anywhere;
+    
+}
+
+
+.cell:hover {
+	background: rgb(0, 0, 0);
+    border-color: rgb(50, 200, 50);
+}
+
+.cell.selected {
+    border: rgb(200, 50, 50) 4px solid;
+}
+
+#words {
+    color: rgb(220, 220, 220);
+    margin-top: 15px;
+    font-size: 2em;
+}
