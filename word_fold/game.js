@@ -42,18 +42,49 @@ const CELLS = make_cell_list();
 console.log(CELLS);
 
 function setup_game(board) {
-    for(x = 0; x < 5; x++) {
-        for(y = 0; y < 5; y++) {
+    for(let x = 0; x < 5; x++) {
+        for(let y = 0; y < 5; y++) {
             CELLS[y][x].innerHTML = board[y][x];
+            CELLS[y][x].classList.remove("selected");
         }
     }
 }
 
-setup_game(BOARDS[0].cells);
-document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[0].words.join(", ");
+
+let board_num = 0;
+
+setup_game(BOARDS[board_num].cells);
+document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[board_num].words.join(", ");
 
 let selected_x = -1;
 let selected_y = -1;
+
+function advance_level() {
+    board_num++;
+    if (board_num < 3) {
+        setup_game(BOARDS[board_num].cells);
+        document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[board_num].words.join(", ");
+        selected_x = -1;
+        selected_y = -1;
+    } else {
+        board_num = 2;
+        document.getElementById("cell-holder").innerHTML = "<div class='win-message'>You Win!</div>";
+        document.getElementById("words").innerHTML = "Congratulations!";
+    }
+}
+
+function previous_level() {
+    board_num--;
+    if(board_num >= 0) {
+        setup_game(BOARDS[board_num].cells);
+        document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[board_num].words.join(", ");
+        selected_x = -1;
+        selected_y = -1;
+    }
+    else {
+        board_num = 0;
+    }
+}
 
 function select(x, y) {
     let cell = CELLS[y][x];

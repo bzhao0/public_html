@@ -5,7 +5,7 @@
   <title>Word Fold</title>
   <link rel="stylesheet" href="game.css"></head>
   <script src="game.js" defer></script>
-
+  <script src="rbow.js" defer></script>
 <body>
   <div class="header">
     <h1>Word Fold</h1>
@@ -38,6 +38,9 @@
     <div class="cell" onclick="on_click(4,4)"></div>
   </div>
   <div class="header" id="words"></div>
+<button onclick="advance_level()">Next Board</button>
+<button onclick="previous_level()">Previous Board</button>
+
 </body>
 
 </html>

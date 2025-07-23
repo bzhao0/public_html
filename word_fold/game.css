@@ -38,11 +38,12 @@ body {
 
 .cell:hover {
 	background: rgb(0, 0, 0);
-    border-color: rgb(50, 200, 50);
+    border-color: hsl(var(--hue-angle), 100%, 50%);
 }
 
 .cell.selected {
     border: rgb(200, 50, 50) 4px solid;
+    border-color: hsl(calc(var(--hue-angle) + 180deg), 100%, 50%);
 }
 
 #words {
