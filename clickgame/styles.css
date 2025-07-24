@@ -29,6 +29,11 @@ body {
     transform: rotateX(180deg);
 }
 
+#hyper-gompei {
+    filter: brightness(50%) hue-rotate(270deg) saturate(80%);
+    transform: rotateZ(315deg);
+}
+
 .store {
     background-color: aqua;
     text-align: center;
