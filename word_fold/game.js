@@ -68,19 +68,18 @@ function advance_level() {
         selected_y = -1;
     } else {
         board_num = 2;
-        document.getElementById("cell-holder").innerHTML = "<div class='win-message'>You Win!</div>";
-        document.getElementById("words").innerHTML = "Congratulations!";
     }
 }
 
 function previous_level() {
     board_num--;
-    if(board_num >= 0) {
+    if(board_num >= 0 && board_num < 3) {
         setup_game(BOARDS[board_num].cells);
         document.getElementById("words").innerHTML = "Words to spell: " + BOARDS[board_num].words.join(", ");
         selected_x = -1;
         selected_y = -1;
     }
+
     else {
         board_num = 0;
     }
@@ -127,3 +126,12 @@ function on_click(x, y) {
         select(x, y);
     }
 }
+
+document.addEventListener('mousemove', function(event) {
+    console.log('mousex:', event.clientX);
+    let normalizedX = (event.clientX / window.innerWidth) - 0.5;
+    
+    let maxRotation = 360; 
+    document.documentElement.style.setProperty('--mouse-x-rot', (normalizedX * maxRotation * 2) + 'deg');
+    
+});

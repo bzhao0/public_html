@@ -38,16 +38,30 @@ body {
 
 .cell:hover {
 	background: rgb(0, 0, 0);
-    border-color: hsl(var(--hue-angle), 100%, 50%);
+    border-color: hsl(0, 0%, calc(sin(var(--hue-angle)) * 40% + 60%));
 }
 
 .cell.selected {
     border: rgb(200, 50, 50) 4px solid;
-    border-color: hsl(calc(var(--hue-angle) + 180deg), 100%, 50%);
+    border-color: hsl(calc(var(--hue-angle) / 10), 100%, 50%);
 }
 
 #words {
     color: rgb(220, 220, 220);
     margin-top: 15px;
     font-size: 2em;
+}
+
+#cell-holder {
+	/* transform: rotate3d(0, 0, 1, var(--mouse-x-rot)); */
+    transform: rotateZ(var(--mouse-x-rot, 0deg));
+}
+
+button {
+    text-align: left;
+    font-family: Georgia, serif;
+}
+
+h1, p, button {
+    align-items: left;
 }
