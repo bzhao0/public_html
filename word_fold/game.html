@@ -7,39 +7,44 @@
   <script src="game.js" defer></script>
   <script src="rbow.js" defer></script>
 <body>
-  <div class="header">
-    <h1>Word Fold</h1>
+  <div class="leftcol">
+    <div class="header">
+      <h1>Word Fold</h1>
+    </div>
+    <div class="header" id="words"></div>
+    <button onclick="advance_level()">Next Board</button>
+    <button onclick="previous_level()">Previous Board</button>
   </div>
-  <div id="cell-holder">
-    <div class="cell" onclick="on_click(0,0)"></div>
-    <div class="cell" onclick="on_click(1,0)"></div>
-    <div class="cell" onclick="on_click(2,0)"></div>
-    <div class="cell" onclick="on_click(3,0)"></div>
-    <div class="cell" onclick="on_click(4,0)"></div>
-    <div class="cell" onclick="on_click(0,1)"></div>
-    <div class="cell" onclick="on_click(1,1)"></div>
-    <div class="cell" onclick="on_click(2,1)"></div>
-    <div class="cell" onclick="on_click(3,1)"></div>
-    <div class="cell" onclick="on_click(4,1)"></div>
-    <div class="cell" onclick="on_click(0,2)"></div>
-    <div class="cell" onclick="on_click(1,2)"></div>
-    <div class="cell" onclick="on_click(2,2)"></div>
-    <div class="cell" onclick="on_click(3,2)"></div>
-    <div class="cell" onclick="on_click(4,2)"></div>
-    <div class="cell" onclick="on_click(0,3)"></div>
-    <div class="cell" onclick="on_click(1,3)"></div>
-    <div class="cell" onclick="on_click(2,3)"></div>
-    <div class="cell" onclick="on_click(3,3)"></div>
-    <div class="cell" onclick="on_click(4,3)"></div>
-    <div class="cell" onclick="on_click(0,4)"></div>
-    <div class="cell" onclick="on_click(1,4)"></div>
-    <div class="cell" onclick="on_click(2,4)"></div>
-    <div class="cell" onclick="on_click(3,4)"></div>
-    <div class="cell" onclick="on_click(4,4)"></div>
+  <div class="rightcol">
+    <div id="cell-holder">
+      <div class="cell" onclick="on_click(0,0)"></div>
+      <div class="cell" onclick="on_click(1,0)"></div>
+      <div class="cell" onclick="on_click(2,0)"></div>
+      <div class="cell" onclick="on_click(3,0)"></div>
+      <div class="cell" onclick="on_click(4,0)"></div>
+      <div class="cell" onclick="on_click(0,1)"></div>
+      <div class="cell" onclick="on_click(1,1)"></div>
+      <div class="cell" onclick="on_click(2,1)"></div>
+      <div class="cell" onclick="on_click(3,1)"></div>
+      <div class="cell" onclick="on_click(4,1)"></div>
+      <div class="cell" onclick="on_click(0,2)"></div>
+      <div class="cell" onclick="on_click(1,2)"></div>
+      <div class="cell" onclick="on_click(2,2)"></div>
+      <div class="cell" onclick="on_click(3,2)"></div>
+      <div class="cell" onclick="on_click(4,2)"></div>
+      <div class="cell" onclick="on_click(0,3)"></div>
+      <div class="cell" onclick="on_click(1,3)"></div>
+      <div class="cell" onclick="on_click(2,3)"></div>
+      <div class="cell" onclick="on_click(3,3)"></div>
+      <div class="cell" onclick="on_click(4,3)"></div>
+      <div class="cell" onclick="on_click(0,4)"></div>
+      <div class="cell" onclick="on_click(1,4)"></div>
+      <div class="cell" onclick="on_click(2,4)"></div>
+      <div class="cell" onclick="on_click(3,4)"></div>
+      <div class="cell" onclick="on_click(4,4)"></div>
+    </div>
   </div>
-  <div class="header" id="words"></div>
-<button onclick="advance_level()">Next Board</button>
-<button onclick="previous_level()">Previous Board</button>
+  
 
 </body>
 

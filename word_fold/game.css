@@ -2,8 +2,11 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(32, 32, 32);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* 1. Lay out columns side-by-side */
+    justify-content: center; /* 2. Center the columns horizontally */
+    align-items: flex-start; /* 3. Align columns to the top */
+    padding-top: 20px;
+    gap: 30px; /* 4. Add space between the columns */
 
     h1 {
         color: rgb(255, 255, 255);
@@ -14,9 +17,11 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    aspect-ratio: 1 / 1;
-    width: 45%;
+    aspect-ratio: 1 / 1; /* This keeps the board square */
+    /* By removing 'width', the board will now fill the container thanks to 'align-items: stretch' on .rightcol */
     gap: 8px;
+    /* The transform is moved here and reduced for a more subtle effect on the larger board */
+    transform: translateX(calc(var(--mouse-x) * 4%)) translateY(calc(var(--mouse-y) * 4%));
 
     div {
         color: rgb(255, 255, 255);
@@ -38,12 +43,12 @@ body {
 
 .cell:hover {
 	background: rgb(0, 0, 0);
-    border-color: hsl(0, 0%, calc(sin(var(--hue-angle)) * 40% + 60%));
+    border-color: hsl(0, 100%, calc(sin(var(--hue-angle)) * 60% + 40%));
 }
 
 .cell.selected {
     border: rgb(200, 50, 50) 4px solid;
-    border-color: hsl(calc(var(--hue-angle) / 10), 100%, 50%);
+    border-color: hsl(calc(var(--hue-angle) / 5), 100%, 50%);
 }
 
 #words {
@@ -52,13 +57,52 @@ body {
     font-size: 2em;
 }
 
-#cell-holder {
-	/* transform: rotate3d(0, 0, 1, var(--mouse-x-rot)); */
-    /* transform: rotateZ(calc(sin(var(--mouse-x-rot)) * 90deg)) */
-    transform: translateX(calc(var(--mouse-x) * 10%)) translateY(calc(var(--mouse-y) * 10%));
+.header {
+    text-align: center;
+    padding-bottom: 200px;
 }
 
-button {
-    text-align: left;
+.leftcol {
+    /* flex: grow shrink basis. 0 0 200px makes it a fixed-width column. */
+    flex: 0 0 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Make child elements (buttons) fill the width */
+    gap: 15px;
+    padding-right: 100px;
+    transform: translateX(calc(var(--mouse-x) * 2%)) translateY(calc(var(--mouse-y) * 2%));
+
+}
+
+.leftcol button {
+    padding: 10px;
     font-family: Georgia, serif;
+    font-size: 1em;
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #888;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.leftcol button:hover {
+    background-color: #444;
+    border-color: #aaa;
+}
+
+.rightcol {
+    /* flex: grow shrink basis. 0 1 550px makes it max-out at 550px but allows shrinking. */
+    flex: 0 1 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* This makes the #cell-holder fill the column's width */
+    gap: 150px;
+}
+
+/* Make the layout stack vertically on smaller screens for responsiveness */
+@media only screen and (max-width: 1000px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
 }
