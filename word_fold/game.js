@@ -128,10 +128,12 @@ function on_click(x, y) {
 }
 
 document.addEventListener('mousemove', function(event) {
-    console.log('mousex:', event.clientX);
     let normalizedX = (event.clientX / window.innerWidth) - 0.5;
     
-    let maxRotation = 360; 
-    document.documentElement.style.setProperty('--mouse-x-rot', (normalizedX * maxRotation * 2) + 'deg');
+    document.documentElement.style.setProperty('--mouse-x', (normalizedX));
+
+    let normalizedY = (event.clientY / window.innerHeight) - 0.5;
+    
+    document.documentElement.style.setProperty('--mouse-y', (normalizedY));
     
 });

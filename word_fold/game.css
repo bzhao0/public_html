@@ -54,14 +54,11 @@ body {
 
 #cell-holder {
 	/* transform: rotate3d(0, 0, 1, var(--mouse-x-rot)); */
-    transform: rotateZ(var(--mouse-x-rot, 0deg));
+    /* transform: rotateZ(calc(sin(var(--mouse-x-rot)) * 90deg)) */
+    transform: translateX(calc(var(--mouse-x) * 10%)) translateY(calc(var(--mouse-y) * 10%));
 }
 
 button {
     text-align: left;
     font-family: Georgia, serif;
-}
-
-h1, p, button {
-    align-items: left;
 }
