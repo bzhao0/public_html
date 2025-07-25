@@ -4,7 +4,7 @@
 */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-	background-color: #8ed455 ;
+	background-color: rgb(32, 32, 32) ;
 }
 
 img {
@@ -21,17 +21,15 @@ meter, progress, output {
 div#tswsidecol {
 	float: right ;
 	width: 10% ;
-	color: #000 ;
-	/* background-image: url("assets/ashton-hall-controller.gif") ; */
+	color: #ffffff ;
 	background-size: 100%;
 	
 }
 div#tswcontent {
 	float: right ;
-	width: 90% ;
-	color: #000 ;
-	/* background-image: url("assets/ashton-hall-controller.gif") ; */
-	background-size: 1512px 800px
+	width: 89% ;
+	color: #ffffff ;
+	background-size: 1512px 800px ;
 
 }
 @media only screen and (max-width: 629px) {
@@ -56,30 +54,50 @@ div#tswsideproper, div#tswothersideproper {
 	padding-right: 5px ;
 }
 div#tswheader {
-	border-radius: 200px ;
-	color: #000000 ;
-	background-color: #63923c ;
-	p {
-		padding-left: 20px ;
-		padding-top: 10px ;
-	}
-	
+	color: #ffffff ;
+	background-color: rgb(20, 20, 20) ;
+	border: solid;
+    border-color: rgb(150, 150, 150);
+	margin-bottom: 20px;
+}
+div#tswheader p {
+	padding-left: 20px ;
+	padding-top: 10px ;
 }
 div#tswfooter {
-	border-radius: 200px ;
-	color: #000000 ;
-	background-color: #63923c ;
-	p {
-		padding-left: 20px ;
-		padding-top: 10px ;
-	}
+	color: #ffffff ;
+	background-color: rgb(20, 20, 20) ;
+	border: solid;
+    border-color: rgb(150, 150, 150);
+}
+div#tswfooter p {
+	padding-left: 20px ;
+	padding-top: 10px ;
 }
 
 h1, p {
-	color: hsl(var(--rotation), 100%, 50%);
+	color: #ffffff;
 }
 
 img {
 	transform: translateY(calc(sin(var(--rotation)) * 50px - 20px)) translateX(calc(cos(var(--rotation)) * 10px))    rotate3d(1, 1, 1, calc(var(--rotation) * 5));
 	filter: hue-rotate(calc(var(--rotation) * .5));
+}
+
+button {
+	color: #ffffff ;
+	border: 2px solid rgb(150, 150, 150) ;
+
+	display: inline-block ;
+	padding: 15px ;
+
+	background-color: #333;
+    color: #eee;
+    cursor: pointer;
+	text-decoration: none ;
+}
+
+button:hover {
+	background: #444;
+    border-color: hsl(var(--hue, 0), 100%, 50%);
 }

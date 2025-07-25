@@ -63,11 +63,10 @@ body {
 }
 
 .leftcol {
-    /* flex: grow shrink basis. 0 0 200px makes it a fixed-width column. */
     flex: 0 0 400px;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* Make child elements (buttons) fill the width */
+    align-items: stretch;
     gap: 15px;
     padding-right: 100px;
     transform: translateX(calc(var(--mouse-x) * 2%)) translateY(calc(var(--mouse-y) * 2%));

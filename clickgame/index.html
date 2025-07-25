@@ -4,60 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gompei's Grass Game</title>
+    <title>Cheesecake Clicker</title>
     <link rel="stylesheet" href="styles.css">
     <script src="./game.js" defer></script>
 </head>
 
 <body>
-    <h1 class="center">Gompei's Grass Game</h1>
+    <h1 class="center">Cheesecake Clicker</h1>
     <h2 class="center" id="score">Score: 0</h2>
     <div id="store-container">
-        <div class="store" name="Lawn" cost="5" onclick="buy(event.currentTarget)">
-            <div class="widget" reap="2" cooldown="0.5" auto="false" name="Lawn">
-                <p>Lawn</p>
-                <div class="overlay-slide" style="animation-duration: 0.5s;"></div>
+        <div class="store" name="Lawn" cost="5" onclick="buy(event.currentTarget)" src="cheeses/cheese.png">
+            <div class="widget" reap="0.5" cooldown="0.2" auto="false" name="Lawn">
+                <img src="cheeses/cheese.png">
+                <div class="overlay-slide" style="animation-duration: 0.2s;"></div>
             </div>
-            <p>Lawn</p>
+            <p>Cheese</p>
             <p>5 points</p>
-            <p>+2 sqft</p>
-            <p>0.5s</p>
+            <p>+0.5. sqft (?!)</p>
+            <p>0.2s</p>
         </div>
-        <div class="store" name="Gompei" cost="15" reap="10" cooldown="2.0" auto="true" src="./gompei.png"
+        <div class="store" name="Gompei" cost="30" reap="10" cooldown="2.0" auto="true" src="cheeses/cheesecake.png"
             onclick="buy(event.currentTarget)">
             <div class="widget" reap="10" cooldown="2.0" auto="true" name="Gompei">
-                <img src="./gompei.png">
+                <img src="cheeses/cheesecake.png">
                 <div class="overlay-slide" style="animation-duration: 2s;"></div>
             </div>
-            <p>Gompei</p>
-            <p>15 points</p>
+            <p>Cheesecake</p>
+            <p>30 points</p>
             <p>+10 sqft</p>
             <p>2.0s</p>
         </div>
-        <div class="store" name="Super-Gompei" cost="150" reap="100" cooldown="5.0" auto="true" src="./gompei.png"
+        <div class="store" name="Super-Gompei" cost="300" reap="100" cooldown="5.0" auto="true" src="cheeses/bluecheesecake.png"
             onclick="buy(event.currentTarget)">
             <div class="widget" reap="100" cooldown="5.0" auto="true" name="Super-Gompei">
-                <img src="./gompei.png" id="super-gompei">
+                <img src="cheeses/bluecheesecake.png" id="super-gompei">
                 <div class="overlay-slide" style="animation-duration: 5s;"></div>
             </div>
-            <p>Super-Gompei</p>
-            <p>150 points</p>
+            <p>Blueberry Cheesecake</p>
+            <p>300 points</p>
             <p>+100 sqft</p>
             <p>5.0s</p>
         </div>
-        <div class="store" name="Hyper-Gompei" cost="1500" reap="1000" cooldown="10.0" auto="true" src="./gompei.png"
+        <div class="store" name="Hyper-Gompei" cost="3000" reap="1000" cooldown="10.0" auto="true" src="cheeses/strawcheesecake.png"
             onclick="buy(event.currentTarget)">
             <div class="widget" reap="1000" cooldown="10.0" auto="true" name="Hyper-Gompei">
-                <img src="./gompei.png" id="hyper-gompei">
+                <img src="cheeses/strawcheesecake.png" id="hyper-gompei">
                 <div class="overlay-slide" style="animation-duration: 10s;"></div>
             </div>
-            <p>Hyper-Gompei</p>
-            <p>1500 points</p>
+            <p>Strawberry Cheesecake</p>
+            <p>3000 points</p>
             <p>+1000 sqft</p>
             <p>10.0s</p>
         </div>
     </div>
     <div id="widget-container"></div>
+    <a href="../index.html"><button>Home</button></a>
 
 </body>
 

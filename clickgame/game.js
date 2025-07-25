@@ -30,6 +30,7 @@ function changeScore(amount) {
             store.removeAttribute("broke");
         }
     }
+    // toFixed(2) round to 2 decimal places next time
 }
 
 function createWidgetFromStore(store) {
@@ -111,7 +112,7 @@ function harvest(widget) {
 
     widget.setAttribute("harvesting", "");
 
-    changeScore(parseInt(widget.getAttribute("reap")));
+    changeScore(parseFloat(widget.getAttribute("reap")));
     givePoints(widget);
 
     setup_end_harvest(widget);
@@ -129,25 +130,8 @@ function givePoints(widget) {
     widget.appendChild(points_element);
 
     if (widget.getAttribute("name") === "Lawn") {
-        let old_reap = parseInt(widget.getAttribute("reap"));
-        let new_reap = Math.ceil(old_reap * 1.01);
-
-
-
-
-
-
-
-
-        // fix this
-
-
-
-
-
-
-
-
+        const old_reap = parseFloat(widget.getAttribute("reap"));
+        const new_reap = (old_reap * 1.1).toFixed(2);
         widget.setAttribute("reap", new_reap);
     }
 }
