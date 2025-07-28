@@ -131,7 +131,7 @@ function givePoints(widget) {
 
     if (widget.getAttribute("name") === "Lawn") {
         const old_reap = parseFloat(widget.getAttribute("reap"));
-        const new_reap = (old_reap * 1.1).toFixed(2);
+        const new_reap = (old_reap * 1.01).toFixed(2);
         widget.setAttribute("reap", new_reap);
     }
 }

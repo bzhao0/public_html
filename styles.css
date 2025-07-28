@@ -4,7 +4,7 @@
 */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-	background-color: rgb(32, 32, 32) ;
+	background-color: rgb(255, 253, 203) ;
 }
 
 img {
@@ -55,9 +55,9 @@ div#tswsideproper, div#tswothersideproper {
 }
 div#tswheader {
 	color: #ffffff ;
-	background-color: rgb(20, 20, 20) ;
+	background-color: rgb(255, 162, 162) ;
 	border: solid;
-    border-color: rgb(150, 150, 150);
+    border-color: rgb(255, 255, 255);
 	margin-bottom: 20px;
 }
 div#tswheader p {
@@ -66,9 +66,9 @@ div#tswheader p {
 }
 div#tswfooter {
 	color: #ffffff ;
-	background-color: rgb(20, 20, 20) ;
+	background-color: rgb(255, 162, 162) ;
 	border: solid;
-    border-color: rgb(150, 150, 150);
+    border-color: rgb(255, 255, 255);
 }
 div#tswfooter p {
 	padding-left: 20px ;
@@ -76,7 +76,7 @@ div#tswfooter p {
 }
 
 h1, p {
-	color: #ffffff;
+	color: #000000;
 }
 
 img {

@@ -61,19 +61,16 @@ body {
     filter: brightness(.5)
 }
 
-/* If the widget is an automatic widget */
 .widget[auto="true"] {
     background-color: rgb(50, 50, 50);
     border: 3px solid rgb(150, 150, 150);
 }
 
-/* If the widget is a click widget */
 .widget:not([auto="true"]) {
     background-color: rgb(50, 50, 50);
     border: 3px solid rgb(150, 150, 150);
 }
 
-/* Widget with image */
 .widget img {
     max-width: 100%;
     max-height: 100%;
@@ -131,4 +128,20 @@ body {
     100% {
         width: 0%;
     }
+}
+
+button {
+    padding: 4px;
+    font-family: Georgia, serif;
+    font-size: 1em;
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #888;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #444;
+    border-color: #aaa;
 }
