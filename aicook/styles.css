@@ -358,14 +358,15 @@ button {
     padding: 4px;
     font-family: Georgia, serif;
     font-size: 1em;
-    background-color: #333;
-    color: #eee;
-    border: 1px solid #888;
+    background-color: #57b83a;
+    color: #000000;
+    border: 2px solid #15690a;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: #444;
-    border-color: #aaa;
+    background: #df3e3e;
+	border-style: ridge;
+	color: #ffffff;
 }

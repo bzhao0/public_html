@@ -25,18 +25,20 @@
 }
 #tswcssbuttons li a {
 	color: #ffffff ;
-	border: 2px solid rgb(150, 150, 150) ;
+	border: 3px solid rgb(255, 255, 255) ;
 	width: 70px ;
 	height: 20px ;
 	display: inline-block ;
 	padding: 10px ;
 
-	background-color: #333;
-    color: #eee;
+	background-color: rgb(255, 162, 162);
+    color: #000000;
     cursor: pointer;
 	text-decoration: none ;
 }
 #tswcssbuttons li a:hover {
-	background: #444;
+	background: #df3e3e;
     border-color: hsl(var(--hue, 0), 100%, 50%);
+	border-style: ridge;
+	color: #ffffff;
 }

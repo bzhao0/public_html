@@ -69,7 +69,9 @@ body {
     align-items: stretch;
     gap: 15px;
     padding-right: 100px;
-    transform: translateX(calc(var(--mouse-x) * 2%)) translateY(calc(var(--mouse-y) * 2%));
+    transform: translateX(calc(var(--mouse-x) * 2%)) translateY(calc(var(--mouse-y) * 2% + 2%)) rotate(calc(sin(calc(var(--hue-angle) / 4)) * 3deg));
+
+                        /* fix allat */
 
 }
 
