@@ -69,9 +69,7 @@ body {
     align-items: stretch;
     gap: 15px;
     padding-right: 100px;
-    transform: translateX(calc(var(--mouse-x) * 2%)) translateY(calc(var(--mouse-y) * 2% + 2%)) rotate(calc(sin(calc(var(--hue-angle) / 4)) * 3deg));
-
-                        /* fix allat */
+    transform: translateX(calc(var(--mouse-x) * 2%)) translateY(calc(var(--mouse-y) * 2% + 2%)) rotate(calc(sin(calc(var(--hue-angle) / 6)) * 3deg));
 
 }
 
@@ -92,15 +90,13 @@ body {
 }
 
 .rightcol {
-    /* flex: grow shrink basis. 0 1 550px makes it max-out at 550px but allows shrinking. */
     flex: 0 1 850px;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* This makes the #cell-holder fill the column's width */
+    align-items: stretch; 
     gap: 150px;
 }
 
-/* Make the layout stack vertically on smaller screens for responsiveness */
 @media only screen and (max-width: 1000px) {
     body {
         flex-direction: column;

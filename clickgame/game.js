@@ -18,7 +18,7 @@ function initializeStoreCosts() {
 
 function changeScore(amount) {
     score += amount;
-    score_element.innerHTML = "Score: " + score;
+    score_element.innerHTML = "Score: " + score.toFixed(2);
 
     for (let store of stores) {
         let cost = parseInt(store.getAttribute("cost"));
@@ -57,7 +57,7 @@ function buy(store) {
 
     changeScore(-cost);
 
-    const newCost = Math.ceil(cost * 1.3);
+    const newCost = Math.ceil(cost * 1.15);
     store.setAttribute("cost", newCost);
 
     for (const child of store.children) {
@@ -72,6 +72,7 @@ function buy(store) {
     if (storeName == "Hyper-Gompei") {
         rebirth();
         createWidgetFromStore(store);
+
         return;
     }
 
@@ -174,6 +175,39 @@ function rebirth() {
 
     changeScore(-score + 5);
 }
+
+let harvestingIntervalId = null;
+let currentWidget = null;
+
+function startHarvesting(widget) {
+    if (harvestingIntervalId) {
+        return; // Already harvesting
+    }
+
+    currentWidget = widget;
+
+    harvestingIntervalId = setInterval(() => {
+        harvest(widget);
+    }, 50); // Adjust the interval (100ms) as needed
+}
+
+function stopHarvesting() {
+    if (harvestingIntervalId) {
+        clearInterval(harvestingIntervalId);
+        harvestingIntervalId = null;
+        currentWidget = null;
+    }
+}
+
+widget_container.addEventListener("mousedown", (event) => {
+    if (event.target.getAttribute("name") === "Lawn") {
+        startHarvesting(event.target);
+    }
+});
+
+widget_container.addEventListener("mouseup", stopHarvesting);
+widget_container.addEventListener("mouseleave", stopHarvesting);
+
 
 changeScore(5);
 initializeStoreCosts();
