@@ -1,12 +1,19 @@
+import View from "./view.js";
+
 let story = "";
 let initialStory = "";
 let currentLanguage = "en-US";
 let currentLanguageName = "English";
 
-const GEMINI_API_KEY = "AIzaSyAfvZzou9aJRYY4owRMIrWith1E3Zq5P7s";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+
 
 async function generateStory(prompt) {
+    const GEMINI_API_KEY = View.getKey();
+    if(!GEMINI_API_KEY) {
+        alert("Empty Key");
+    }
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+    
     const body = {
         contents: [{
             parts: [{
@@ -64,3 +71,5 @@ export default {
     resetStory,
     initializeStory,
 }
+
+var slider = document.getElementById("tspmo");

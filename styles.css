@@ -5,6 +5,7 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 	background-color: rgb(255, 242, 184) ;
+
 }
 
 img {
@@ -23,6 +24,8 @@ div#tswsidecol {
 	width: 10% ;
 	color: #ffffff ;
 	background-size: 100%;
+	transform: translateX(calc(var(--mouse-x) * 10px)) translateY(calc(var(--mouse-y) * 25px + 10px))
+
 	
 }
 div#tswcontent {
@@ -30,6 +33,8 @@ div#tswcontent {
 	width: 89% ;
 	color: #ffffff ;
 	background-size: 1512px 800px ;
+	transform: translateX(calc(var(--mouse-x) * 20px)) translateY(calc(var(--mouse-y) * 50px - 15px))
+
 
 }
 @media only screen and (max-width: 629px) {
@@ -59,6 +64,8 @@ div#tswheader {
 	border: solid;
     border-color: rgb(255, 255, 255);
 	margin-bottom: 20px;
+	transform: translateX(calc(var(--mouse-x) * 5px)) translateY(calc(var(--mouse-y) * 12px + 5px))
+
 }
 div#tswheader p {
 	padding-left: 20px ;
@@ -69,6 +76,8 @@ div#tswfooter {
 	background-color: rgb(255, 162, 162) ;
 	border: solid;
     border-color: rgb(255, 255, 255);
+	transform: translateX(calc(var(--mouse-x) * 5px)) translateY(calc(var(--mouse-y) * 12px + 5px))
+
 }
 div#tswfooter p {
 	padding-left: 20px ;
@@ -80,7 +89,7 @@ h1, p {
 }
 
 img {
-	transform: translateY(calc(sin(var(--rotation)) * 50px - 20px)) translateX(calc(cos(var(--rotation)) * 10px))    rotate3d(1, 1, 1, calc(var(--rotation) * 5));
+	transform: translateY(calc(sin(var(--rotation)) * 50px - 20px)) translateX(calc(cos(var(--rotation)) * 10px)) rotate3d(1, 1, 1, calc(var(--rotation) * 5));
 	filter: hue-rotate(calc(var(--rotation) * .5));
 }
 
@@ -95,6 +104,7 @@ button {
     color: #000000;
     cursor: pointer;
 	text-decoration: none ;
+
 }
 
 button:hover {
@@ -102,4 +112,9 @@ button:hover {
     border-color: hsl(var(--hue, 0), 100%, 50%);
 	border-style: ridge;
 	color: #ffffff;
+}
+div#list {
+	display: flex;
+	justify-content: left;
+	gap: 250px;
 }

@@ -5,7 +5,7 @@
 
 body {
     --gompei-count: 1;
-    background-color: rgb(32, 32, 32);
+    background-color: hsl(9, 43%, 46%);
     color: white;
 }
 
@@ -144,4 +144,14 @@ button {
 button:hover {
     background-color: #444;
     border-color: #aaa;
+}
+
+#screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(calc(var(--bg-color, 0) * 15), 100%, 50%, 0.05);
+    pointer-events: none;
 }

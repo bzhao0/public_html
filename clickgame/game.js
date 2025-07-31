@@ -4,6 +4,8 @@ let stores = document.getElementsByClassName("store");
 
 let score = 0;
 let super_gompei_count = 0;
+let hyper_gompei_purchase_count = 0;
+
 const baseCosts = new Map();
 
 function initializeStoreCosts() {
@@ -81,7 +83,7 @@ function buy(store) {
         let old_reap = parseInt(super_gompei.getAttribute("reap"));
         super_gompei.setAttribute("reap", old_reap + 100);
         super_gompei_count++;
-        document.body.style = "--gompei-count:" + super_gompei_count;
+        document.body.style.setProperty("--gompei-count", super_gompei_count);
         return;
     }
     createWidgetFromStore(store);
@@ -170,8 +172,11 @@ function rebirth() {
         }
     }
 
+    hyper_gompei_purchase_count++;
+    document.body.style.setProperty("--bg-color", hyper_gompei_purchase_count);
+
     super_gompei_count = 0;
-    document.body.style = "--gompei-count:" + super_gompei_count;
+    document.body.style.setProperty("--gompei-count", super_gompei_count);
 
     changeScore(-score + 5);
 }
@@ -188,7 +193,7 @@ function startHarvesting(widget) {
 
     harvestingIntervalId = setInterval(() => {
         harvest(widget);
-    }, 50); // Adjust the interval (100ms) as needed
+    }, 0); // Adjust the interval (100ms) as needed
 }
 
 function stopHarvesting() {
